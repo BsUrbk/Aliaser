@@ -14,8 +14,11 @@ Bash command for making aliases in bashrc
     bash ./install
 ```
 
+## Command
 
-
+```bash
+    aliaser
+```
 
 ## Authors
 
