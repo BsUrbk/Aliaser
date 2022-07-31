@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ -d "/home/$USER/.bashrc" ]]; then
+    echo "Couldn't find a bashrc file at /home/$USER"
+    exit 1
+fi
+
+i=1
+while read -r line;
+    do
+        i=$((i + 1))
+        if [[ "$line" == *"#ALIASER"* ]]; then
+            break
+        fi
+done < /home/$USER/.bashrc
+            
+  
+echo "Enter name of the alias and command you want it to execute"
+read al comm
+
+sed -i "${i}ialias ${al}='${comm}'" /home/$USER/.bashrc
